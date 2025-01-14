@@ -1,0 +1,58 @@
+{
+    "name": "freiretechsp/buscador-cursos",
+    "description": "Projeto que busca os cursos da Alura.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "FreireTechSp",
+            "email": "rodrigo.freire.tech@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.9",
+        "symfony/dom-crawler": "^7.2",
+        "symfony/css-selector": "^7.2"
+    },
+    "autoload": {
+        "classmap": [
+            "./DataEHora.php"
+        ],
+        "files": [
+            "./functions.php"
+        ],
+        "psr-4": {
+            "AluraNomeOrganizacao\\BuscadorDeCursosNomeProduto\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8",
+        "squizlabs/php_codesniffer": "^3.11",
+        "phan/phan": "^5.4"
+    },
+    "scripts": {
+        "test": "phpunit tests/TestBuscadorDeCursos.php",
+        "cs": "phpcs --standard=PSR12 src/",
+        "phan": "phan  --allow-polyfill-parser",
+        "porta80": "sudo lsof -i:80",
+        "apaga-diretorio-cache": "rm -rf cache",
+        "check": [
+            "@phan",
+            "@cs",
+            "@test"
+        ],
+        "post-update-cmd": [
+            "@test"
+        ],
+        "post-status-cmd": [
+            "@check"
+        ]
+    },
+    "scripts-descriptions": {
+        "test": "-> {#} [NOME-PROJETO][FERRAMENTA]: Roda o teste de TestBuscadorDeCursos(PHPUNIT).",
+        "cs": "-> {#} [NOME-PROJETO][FERRAMENTA]: Verifica o código e retorna inconsistências com o padrão PSR-12(PHPCS).",
+        "phan": "-> {#} [NOME-PROJETO][FERRAMENTA]: Verifica Sintaxe de código e retorna se houver erros(PHAN).",
+        "check": "-> {#} [NOME-PROJETO][FERRAMENTA]: Roda as verificações do código. PHAN, PHPCS e PHPUNIT",
+        "porta80": "-> {#} [NOME-PROJETO][FERRAMENTA]: Verifica a porta 80",
+        "apaga-diretorio-cache": "-> {#} [NOME-PROJETO][FERRAMENTA]: Apaga o diretório 'cache'(Obs: Para testar, crie um pasta com o nome de 'cache' no diretório principal do projeto)"
+    }
+}
