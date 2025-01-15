@@ -54,5 +54,6 @@
         "check": "-> {#} [NOME-PROJETO][FERRAMENTA]: Roda as verificações do código. PHAN, PHPCS e PHPUNIT",
         "porta80": "-> {#} [NOME-PROJETO][FERRAMENTA]: Verifica a porta 80",
         "apaga-diretorio-cache": "-> {#} [NOME-PROJETO][FERRAMENTA]: Apaga o diretório 'cache'(Obs: Para testar, crie um pasta com o nome de 'cache' no diretório principal do projeto)"
-    }
+    },
+    "license": "GPL-3.0"
 }
