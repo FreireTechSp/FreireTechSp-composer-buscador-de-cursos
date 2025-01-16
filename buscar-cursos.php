@@ -1,4 +1,10 @@
+#!/usr/bin/env php
 <?php
+/*
+ * O código #! indica que estamos informando que programa lerá esse arquivo
+ *
+ * /usr/bin/env php explicita que o arquivo deverá ser lido pelo PHP 
+*/
 
 use PHP_CodeSniffer\Autoload;
 
@@ -22,7 +28,7 @@ $buscador = new Buscador($client, $crawler);
 $cursos = $buscador->buscar('cursos-online-programacao/php') ;
 
 foreach($cursos as $curso){
-    echo exibeMensagem($curso);
+    exibeMensagem($curso);
 }
 
 
